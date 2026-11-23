@@ -1,0 +1,8 @@
+[Unit]
+Description=DualSense bluetooth bridge for /dev/%i
+BindsTo=dev-%i.device
+After=dev-%i.device
+
+[Service]
+ExecStart=/usr/local/bin/sheva bridge /dev/%i
+RuntimeDirectory=sheva

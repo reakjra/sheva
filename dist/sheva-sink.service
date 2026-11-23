@@ -1,0 +1,10 @@
+[Unit]
+Description=DualSense haptics sink for the sheva bridge
+After=pipewire.service
+
+[Service]
+ExecStart=/usr/local/bin/sheva sink
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

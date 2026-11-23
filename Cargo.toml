@@ -1,0 +1,22 @@
+[package]
+name = "sheva"
+version = "0.1.0"
+edition = "2024"
+license = "GPL-3.0-or-later"
+description = "Stop Haptics Emulation, Via Audio: DualSense voice-coil haptics over bluetooth"
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+crc32fast = "1"
+nix = { version = "0.32", features = ["fs", "ioctl", "poll", "user"] }
+pipewire = "0.10"
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[lints.clippy]
+absolute_paths = "warn"
